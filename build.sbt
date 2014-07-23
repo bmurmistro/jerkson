@@ -3,7 +3,7 @@ name := "jerkson"
 
 organization := "org.cphylabs"
 
-version := "0.6.4-SNAPSHOT"
+version := "0.6.4"
 
 licenses := Seq(
   ("The MIT License", url("http://codahale.com/mit.txt"))
@@ -20,7 +20,7 @@ scmInfo := Some(
 )
 
 /* scala versions and options */
-scalaVersion := "2.10.1"
+scalaVersion := "2.11.1"
 
 // These options will be used for *all* versions.
 scalacOptions ++= Seq(
@@ -35,10 +35,10 @@ scalacOptions ++= Seq(
   "-Yinline"
 )
 
-// These language flags will be used only for 2.10.x.
+// These language flags will be used only for 2.11.x.
 // Uncomment those you need, or if you hate SIP-18, all of them.
 scalacOptions <++= scalaVersion map { sv =>
-  if (sv startsWith "2.10") List(
+  if (sv startsWith "2.11") List(
     // "-Xverify",
     // "-Ywarn-all",
     "-feature",
@@ -55,8 +55,8 @@ javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation")
 
 /* dependencies */
 libraryDependencies ++= Seq(
-  "com.fasterxml.jackson.core" % "jackson-core" % "2.0.2",
-  "com.fasterxml.jackson.core" % "jackson-databind" % "2.0.2"
+  "com.fasterxml.jackson.core" % "jackson-core" % "2.1.3",
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.1.3"
 )
 
 libraryDependencies <+= scalaVersion {
